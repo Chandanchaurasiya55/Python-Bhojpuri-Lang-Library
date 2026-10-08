@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software in your research or project, please cite it as below."
+title: "BhojpuriPy: High-Performance Multilingual Bhojpuri Machine Translation & NLP Engine"
+authors:
+  - family-names: "Chaurasiya"
+    given-names: "Chandan"
+version: "1.0.0"
+date-released: "2026-10-08"
+url: "https://github.com/Chandanchaurasiya55/Python-Bhojpuri-Lang-Library"
+keywords:
+  - bhojpuri
+  - natural-language-processing
+  - machine-translation
+  - indic-nlp
