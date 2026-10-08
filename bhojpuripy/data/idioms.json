@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "bhojpuri": "नाचे ना आवे त अँगने टेढ़",
+    "roman": "Naache naa aave ta angane tedh",
+    "hindi": "नाच न जाने आँगन टेढ़ा",
+    "english": "A bad workman blames his tools",
+    "meaning": "अपनी कमी छुपाने के लिए दूसरों या परिस्थिति में दोष निकालना।"
+  },
+  {
+    "id": 2,
+    "bhojpuri": "जेकर लाठी ओकर भँइस",
+    "roman": "Jekar laathi okar bhains",
+    "hindi": "जिसकी लाठी उसकी भैंस",
+    "english": "Might is right",
+    "meaning": "बलवान की ही हमेशा जीत होती है।"
+  },
+  {
+    "id": 3,
+    "bhojpuri": "अपने हाथे जगन्नाथ",
+    "roman": "Apne haathe Jagannath",
+    "hindi": "अपना हाथ जगन्नाथ",
+    "english": "Self-help is the best help",
+    "meaning": "अपना काम स्वयं करना सबसे उत्तम होता है।"
+  },
+  {
+    "id": 4,
+    "bhojpuri": "घर के जोगी जोगना, आन गाँव के सिद्ध",
+    "roman": "Ghar ke jogi jogna, aan gaanv ke siddh",
+    "hindi": "घर का जोगी जोगड़ा, आन गाँव का सिद्ध",
+    "english": "A prophet is not honored in his own country",
+    "meaning": "अपने घर या गाँव के विद्वान की कद्र नहीं होती।"
+  },
+  {
+    "id": 5,
+    "bhojpuri": "बोवल बबूल त आम कहाँ से पाई",
+    "roman": "Boval babool ta aam kahaan se paayi",
+    "hindi": "बोया पेड़ बबूल का तो आम कहाँ से होय",
+    "english": "As you sow, so shall you reap",
+    "meaning": "बुरा कर्म करने पर अच्छा परिणाम नहीं मिल सकता।"
+  },
+  {
+    "id": 6,
+    "bhojpuri": "का बरखा जब खेत सुखाइल",
+    "roman": "Kaa barkha jab khet sukhayal",
+    "hindi": "का वर्षा जब कृषि सुखाने",
+    "english": "No use crying over spilled milk / Rain when crop is dead",
+    "meaning": "समय बीत जाने के बाद साधन या मदद का कोई मूल्य नहीं होता।"
+  },
+  {
+    "id": 7,
+    "bhojpuri": "घर के मुर्गी दाल बराबर",
+    "roman": "Ghar ke murgi daal baraabar",
+    "hindi": "घर की मुर्गी दाल बराबर",
+    "english": "Familiarity breeds contempt",
+    "meaning": "आसानी से उपलब्ध चीज़ का महत्व नहीं समझा जाता।"
+  },
+  {
+    "id": 8,
+    "bhojpuri": "आँखि के आन्हर, नाम नयनसुख",
+    "roman": "Aankhi ke aanhar, naam Nayansukh",
+    "hindi": "आँख के अंधे नाम नयनसुख",
+    "english": "Names contradict reality",
+    "meaning": "गुणों के सर्वथा विपरीत नाम या पहचान होना।"
+  },
+  {
+    "id": 9,
+    "bhojpuri": "ऊँट के मुँह में जीरा",
+    "roman": "Oont ke munh mein jeera",
+    "hindi": "ऊँट के मुँह में जीरा",
+    "english": "A drop in the ocean",
+    "meaning": "आवश्यकता से बहुत कम मिलना।"
+  },
+  {
+    "id": 10,
+    "bhojpuri": "जरे पर नोन छिड़कल",
+    "roman": "Jare par non chhidakal",
+    "hindi": "जले पर नमक छिड़कना",
+    "english": "Adding insult to injury",
+    "meaning": "दुखी व्यक्ति को और अधिक कष्ट पहुँचाना।"
+  }
+]

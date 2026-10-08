@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BhojpuriPy | Multilingual Bhojpuri AI Translator & Library</title>
+  <meta name="description" content="Translate any language to Bhojpuri instantly using BhojpuriPy Python Library & Neural Engine. Features dialects, romanization, and idioms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Yatra+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="dark-theme">
+  <!-- Decorative background glows -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <span>भोज</span>
+        </div>
+        <div class="brand-text">
+          <h1>BhojpuriPy <span class="badge">v1.0.0</span></h1>
+          <p class="tagline">Universal Translator for Bhojpuri (भोजपुरी भाषा अनुवादक)</p>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <a href="/docs" target="_blank" class="nav-btn" id="docs-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          API Docs
+        </a>
+        <button id="theme-toggle" class="nav-btn icon-btn" title="Toggle Light/Dark Theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+    <!-- Controls Toolbar -->
+    <div class="toolbar-card">
+      <div class="toolbar-group">
+        <label for="engine-select">Engine:</label>
+        <select id="engine-select" class="custom-select">
+          <option value="universal" selected>Universal Multilingual (Default)</option>
+          <option value="rule_based">Rule-Based Morphological (Zero Latency)</option>
+          <option value="gemini">Gemini AI (Nuance & Idioms)</option>
+          <option value="nllb">Meta NLLB-200 (Offline Neural)</option>
+        </select>
+      </div>
+
+      <div class="toolbar-group">
+        <label for="dialect-select">Dialect (बोली):</label>
+        <select id="dialect-select" class="custom-select">
+          <option value="standard" selected>Standard (Bhojpur / Buxar / Arrah)</option>
+          <option value="western">Western (Gorakhpur / Azamgarh / Banaras)</option>
+          <option value="northern">Northern (Saran / Siwan / Gopalganj)</option>
+        </select>
+      </div>
+
+      <div class="toolbar-group">
+        <label for="honorific-select">Tone (आदर):</label>
+        <select id="honorific-select" class="custom-select">
+          <option value="familiar" selected>Familiar (तूँ / बाड़ा)</option>
+          <option value="formal">Formal / Respectful (रउआ / बानी)</option>
+          <option value="informal">Informal (तू / बाड़ऽ)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Dual Translator Box -->
+    <div class="translator-container">
+      <!-- Source Panel -->
+      <div class="trans-card source-card">
+        <div class="card-header">
+          <div class="lang-selector-wrapper">
+            <select id="source-lang" class="lang-select">
+              <option value="auto" selected>🌐 Auto Detect</option>
+              <option value="en">English (US/UK)</option>
+              <option value="hi">Hindi (हिंदी)</option>
+              <option value="es">Spanish (Español)</option>
+              <option value="fr">French (Français)</option>
+              <option value="de">German (Deutsch)</option>
+              <option value="bn">Bengali (বাংলা)</option>
+              <option value="ur">Urdu (اردو)</option>
+              <option value="mr">Marathi (मराठी)</option>
+              <option value="gu">Gujarati (ગુજરાતી)</option>
+              <option value="pa">Punjabi (ਪੰਜਾਬੀ)</option>
+              <option value="ru">Russian (Русский)</option>
+              <option value="ja">Japanese (日本語)</option>
+              <option value="zh">Chinese (中文)</option>
+              <option value="ar">Arabic (العربية)</option>
+            </select>
+          </div>
+          <button id="clear-btn" class="action-icon-btn" title="Clear text">
+            ✕
+          </button>
+        </div>
+
+        <div class="input-area">
+          <textarea id="source-text" placeholder="Type or paste any text here in English, Hindi, Spanish, etc..." rows="6"></textarea>
+        </div>
+
+        <div class="card-footer">
+          <span class="char-count" id="source-char-count">0 characters</span>
+          <div class="footer-actions">
+            <button id="paste-btn" class="chip-btn">📋 Paste</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center Swap / Action Divider -->
+      <div class="swap-divider">
+        <button id="translate-trigger-btn" class="translate-action-btn" title="Translate Now">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+
+      <!-- Target Panel (Bhojpuri) -->
+      <div class="trans-card target-card">
+        <div class="card-header">
+          <div class="target-title">
+            <span class="flag-icon">🇮🇳</span>
+            <span class="target-lang-label">Bhojpuri (भोजपुरी)</span>
+            <span id="detected-pill" class="detected-pill" style="display:none;">Detected</span>
+          </div>
+          
+          <div class="target-actions">
+            <button id="view-toggle" class="chip-btn active" title="Toggle Script View">
+              🔤 Roman View
+            </button>
+          </div>
+        </div>
+
+        <div class="output-area">
+          <div id="target-placeholder" class="target-placeholder">
+            <span>भोजपुरी अनुवाद यहवाँ लउकी...</span>
+            <p>Translation in authentic Bhojpuri will appear here</p>
+          </div>
+          <div id="target-text" class="target-text-content" style="display:none;"></div>
+          <div id="roman-text" class="roman-text-content" style="display:none;"></div>
+          <div id="loading-spinner" class="spinner-container" style="display:none;">
+            <div class="spinner"></div>
+            <span>Translating to Bhojpuri...</span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <span class="latency-badge" id="latency-display">⚡ Ready</span>
+          <div class="footer-actions">
+            <button id="speak-btn" class="action-icon-btn" title="Pronounce (Listen Audio)">
+              🔊
+            </button>
+            <button id="copy-btn" class="action-icon-btn" title="Copy Translation">
+              📑
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Phrases Chips -->
+    <div class="quick-chips-section">
+      <span class="chips-label">Quick Phrases:</span>
+      <div class="chips-list">
+        <button class="phrase-chip" data-text="Hello, how are you?">👋 How are you?</button>
+        <button class="phrase-chip" data-text="Where are you going?">🚶 Where are you going?</button>
+        <button class="phrase-chip" data-text="What is your name?">🏷️ What is your name?</button>
+        <button class="phrase-chip" data-text="I want to eat food.">🍲 I want to eat food</button>
+        <button class="phrase-chip" data-text="मुझे बहुत भूख लगी है।">🌾 मुझे बहुत भूख लगी है</button>
+        <button class="phrase-chip" data-text="Everything is fine here.">✨ Everything is fine</button>
+        <button class="phrase-chip" data-text="See you again tomorrow!">🤝 See you tomorrow</button>
+      </div>
+    </div>
+
+    <!-- Bottom Feature Grid -->
+    <div class="features-grid">
+      <!-- Feature 1: Live Python Code Snippet -->
+      <div class="info-card code-snippet-card">
+        <div class="info-card-header">
+          <div class="info-title">
+            <span class="code-icon">🐍</span>
+            <h3>Python Integration Code</h3>
+          </div>
+          <button id="copy-code-btn" class="chip-btn">📋 Copy Code</button>
+        </div>
+        <p class="info-desc">Use this translation in your Python projects:</p>
+        <pre class="code-block"><code id="python-code-display">import bhojpuripy as bho
+
+# Translate any language to Bhojpuri
+result = bho.translate("Hello, how are you?", dialect="standard")
+print(result["bhojpuri"])  # Output: प्रणाम, रउआ कइसे बानी?
+print(result["roman"])     # Output: Pranaam, rauaa kaise baanee?</code></pre>
+      </div>
+
+      <!-- Feature 2: Bhojpuri Idioms & Proverbs -->
+      <div class="info-card idioms-card">
+        <div class="info-card-header">
+          <div class="info-title">
+            <span class="idiom-icon">📜</span>
+            <h3>Bhojpuri Idioms (कहावतें)</h3>
+          </div>
+          <button id="random-idiom-btn" class="chip-btn">🎲 New Proverb</button>
+        </div>
+        <div class="idiom-content" id="idiom-display">
+          <h4 id="idiom-bhojpuri">नाचे ना आवे त अँगने टेढ़</h4>
+          <p id="idiom-roman" class="idiom-sub">Naache naa aave ta angane tedh</p>
+          <div class="idiom-meta">
+            <p><strong>Hindi:</strong> <span id="idiom-hindi">नाच न जाने आँगन टेढ़ा</span></p>
+            <p><strong>English:</strong> <span id="idiom-english">A bad workman blames his tools</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <p>Made with ❤️ for Bhojpuri & Indic Language Technology. Open Source under MIT License.</p>
+      <div class="footer-links">
+        <span>📦 <code>pip install bhojpuripy</code></span>
+        <span>•</span>
+        <span>⚡ 100% Python Native</span>
+        <span>•</span>
+        <span>🌐 50+ Languages Supported</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">Copied to clipboard!</div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
