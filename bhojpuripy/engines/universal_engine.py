@@ -5,8 +5,12 @@ import urllib.parse
 import urllib.request
 import re
 from typing import Dict, Any, Optional
-from bhojpuripy.engines.base import BaseEngine
-from bhojpuripy.engines.rule_engine import RuleBasedEngine
+try:
+    from .base import BaseEngine
+    from .rule_engine import RuleBasedEngine
+except (ImportError, ValueError):
+    from bhojpuripy.engines.base import BaseEngine
+    from bhojpuripy.engines.rule_engine import RuleBasedEngine
 
 class UniversalEngine(BaseEngine):
     """

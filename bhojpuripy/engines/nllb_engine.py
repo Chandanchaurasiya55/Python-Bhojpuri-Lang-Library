@@ -1,7 +1,10 @@
 """Meta NLLB-200 (No Language Left Behind) local AI engine for offline Bhojpuri neural translation."""
 
 from typing import Dict, Any, Optional
-from bhojpuripy.engines.base import BaseEngine
+try:
+    from .base import BaseEngine
+except (ImportError, ValueError):
+    from bhojpuripy.engines.base import BaseEngine
 
 class NLLBEngine(BaseEngine):
     """

@@ -1,4 +1,33 @@
 :root {
+  --bg-primary: #fbf9f5;
+  --bg-secondary: #f3efe6;
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-card-hover: #ffffff;
+  --border-subtle: rgba(217, 119, 6, 0.16);
+  --border-focus: #ea580c;
+  
+  --accent-amber: #ea580c;
+  --accent-amber-light: #c2410c;
+  --accent-gradient: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #fb923c 100%);
+  --accent-glow: rgba(234, 88, 12, 0.18);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-indic: 'Yatra One', cursive, var(--font-main);
+  
+  --shadow-lg: 0 16px 36px -8px rgba(180, 83, 9, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 25px rgba(234, 88, 12, 0.18);
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-theme {
   --bg-primary: #0a0d14;
   --bg-secondary: #121722;
   --bg-card: rgba(22, 29, 44, 0.7);
@@ -15,32 +44,20 @@
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
   
-  --radius-lg: 18px;
-  --radius-md: 12px;
-  --radius-sm: 8px;
-  
-  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-indic: 'Yatra One', cursive, var(--font-main);
-  
   --shadow-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 30px rgba(255, 109, 0, 0.2);
-  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.light-theme {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #f1f5f9;
-  --bg-card: rgba(255, 255, 255, 0.85);
-  --bg-card-hover: #ffffff;
-  --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-focus: #e65100;
-  
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-  
-  --shadow-lg: 0 15px 35px -10px rgba(0, 0, 0, 0.1);
-  --shadow-glow: 0 0 20px rgba(255, 109, 0, 0.15);
+/* Remove all scrollbars globally */
+html, body, * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 * {
@@ -515,6 +532,14 @@ textarea#source-text::placeholder {
   margin-bottom: 32px;
   overflow-x: auto;
   padding-bottom: 6px;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.quick-chips-section::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .chips-label {

@@ -258,9 +258,9 @@ print(result["roman"])     # ${romanOutput}`;
 
   // Theme Toggle
   themeToggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-theme");
-    const isLight = document.body.classList.contains("light-theme");
-    themeToggleBtn.querySelector(".theme-icon").textContent = isLight ? "☀️" : "🌙";
+    document.body.classList.toggle("dark-theme");
+    const isDark = document.body.classList.contains("dark-theme");
+    themeToggleBtn.querySelector(".theme-icon").textContent = isDark ? "☀️" : "🌙";
   });
 
   // Load Bhojpuri Idioms

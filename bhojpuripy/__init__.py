@@ -3,9 +3,14 @@ BhojpuriPy: The Open-Source Multilingual Translation Library for Bhojpuri.
 Translate any language (English, Hindi, Spanish, French, etc.) into Bhojpuri.
 """
 
-from bhojpuripy.client import BhojpuriTranslator
-from bhojpuripy.transliterate import devanagari_to_roman
-from bhojpuripy.constants import SUPPORTED_LANGUAGES, DIALECTS, HONORIFICS
+try:
+    from .client import BhojpuriTranslator
+    from .transliterate import devanagari_to_roman
+    from .constants import SUPPORTED_LANGUAGES, DIALECTS, HONORIFICS
+except (ImportError, ValueError):
+    from bhojpuripy.client import BhojpuriTranslator
+    from bhojpuripy.transliterate import devanagari_to_roman
+    from bhojpuripy.constants import SUPPORTED_LANGUAGES, DIALECTS, HONORIFICS
 
 __version__ = "1.0.0"
 __author__ = "Open Source Community"

@@ -3,7 +3,10 @@
 import os
 import json
 from typing import Dict, Any, Optional
-from bhojpuripy.engines.base import BaseEngine
+try:
+    from .base import BaseEngine
+except (ImportError, ValueError):
+    from bhojpuripy.engines.base import BaseEngine
 
 class LLMEngine(BaseEngine):
     """

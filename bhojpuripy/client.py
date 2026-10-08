@@ -4,12 +4,20 @@ import os
 import json
 from typing import Optional, Dict, Any, List
 
-from bhojpuripy.engines.rule_engine import RuleBasedEngine
-from bhojpuripy.engines.universal_engine import UniversalEngine
-from bhojpuripy.engines.llm_engine import LLMEngine
-from bhojpuripy.engines.nllb_engine import NLLBEngine
-from bhojpuripy.transliterate import devanagari_to_roman
-from bhojpuripy.constants import SUPPORTED_LANGUAGES, DIALECTS, HONORIFICS
+try:
+    from .engines.rule_engine import RuleBasedEngine
+    from .engines.universal_engine import UniversalEngine
+    from .engines.llm_engine import LLMEngine
+    from .engines.nllb_engine import NLLBEngine
+    from .transliterate import devanagari_to_roman
+    from .constants import SUPPORTED_LANGUAGES, DIALECTS, HONORIFICS
+except (ImportError, ValueError):
+    from bhojpuripy.engines.rule_engine import RuleBasedEngine
+    from bhojpuripy.engines.universal_engine import UniversalEngine
+    from bhojpuripy.engines.llm_engine import LLMEngine
+    from bhojpuripy.engines.nllb_engine import NLLBEngine
+    from bhojpuripy.transliterate import devanagari_to_roman
+    from bhojpuripy.constants import SUPPORTED_LANGUAGES, DIALECTS, HONORIFICS
 
 class BhojpuriTranslator:
     """
